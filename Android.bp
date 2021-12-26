@@ -4,12 +4,12 @@
 // kernel/sony/msm-X.Y/common-headers
 
 // Use as follows:
-// SOONG_CONFIG_NAMESPACES += qti_kernel_headers
-// SOONG_CONFIG_qti_kernel_headers := version
-// SOONG_CONFIG_qti_kernel_headers_version := 4.14
+// SOONG_CONFIG_NAMESPACES += sony_qti_kernel_headers
+// SOONG_CONFIG_sony_qti_kernel_headers := version
+// SOONG_CONFIG_sony_qti_kernel_headers_version := 4.14
 
 bootstrap_go_package {
-    name: "soong-qti_kernel_headers_defaults",
+    name: "soong-sony_qti_kernel_headers_defaults",
     pkgPath: "kernel/sony/qti-headers",
     deps: [
         "blueprint",
@@ -24,12 +24,12 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-qti_kernel_headers_defaults {
-    name: "qti_kernel_headers_defaults",
+sony_qti_kernel_headers_defaults {
+    name: "sony_qti_kernel_headers_defaults",
 }
 
 cc_library_headers {
-    name: "qti_kernel_headers",
-    defaults: ["qti_kernel_headers_defaults"],
+    name: "sony_qti_kernel_headers",
+    defaults: ["sony_qti_kernel_headers_defaults"],
     vendor_available: true,
 }

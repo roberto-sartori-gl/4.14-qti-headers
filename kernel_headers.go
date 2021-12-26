@@ -1,4 +1,4 @@
-package qti_kernel_headers
+package sony_qti_kernel_headers
 
 import (
 	"android/soong/android"
@@ -8,7 +8,7 @@ import (
 
 func init() {
 	// Register our own module type
-	android.RegisterModuleType("qti_kernel_headers_defaults", qtiKernelHeadersDefaultsFactory)
+	android.RegisterModuleType("sony_qti_kernel_headers_defaults", qtiKernelHeadersDefaultsFactory)
 }
 
 func qtiKernelHeadersDefaultsFactory() android.Module {
@@ -21,14 +21,14 @@ func qtiKernelHeadersDefaultsFactory() android.Module {
 }
 
 func qtiKernelHeadersDefaults(ctx android.LoadHookContext) {
-	version := ctx.Config().VendorConfig("qti_kernel_headers").String("version")
+	version := ctx.Config().VendorConfig("sony_qti_kernel_headers").String("version")
 
 	p := struct {
 		Export_header_lib_headers []string
 		Header_libs []string
 	}{}
 
-	var qtimodule = fmt.Sprintf("qti_kernel_headers_%s", version)
+	var qtimodule = fmt.Sprintf("sony_qti_kernel_headers_%s", version)
 
 	p.Export_header_lib_headers = []string{qtimodule}
 	p.Header_libs = []string{qtimodule}
